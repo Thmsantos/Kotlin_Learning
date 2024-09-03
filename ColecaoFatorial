@@ -1,0 +1,29 @@
+//FATEC LUIGI PAPAIZ
+//THIAGO MESSIAS SANTOS
+//03.09
+
+fun main() {
+    val vetorA: IntArray = IntArray(5)
+    val vetorB: IntArray = IntArray(5)
+    
+    for (i in vetorA.indices) {
+        print("Digite o valor para o elemento ${i + 1} do vetor A: ")
+        vetorA[i] = readLine()?.toIntOrNull() ?: 0
+    }
+    
+    for (i in vetorA.indices) {
+        vetorB[i] = fatorial(vetorA[i])
+    }
+    
+    println("Vetor A: ${vetorA.joinToString(" - ")}")
+    println("Vetor B (Fatorial dos elementos de A): ${vetorB.joinToString(" - ")}")
+}
+
+fun fatorial(n: Int): Int {
+    if (n == 0 || n == 1) return 1
+    var resultado = 1
+    for (i in 2..n) {
+        resultado *= i
+    }
+    return resultado
+}
